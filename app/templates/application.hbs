@@ -1,5 +1,13 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<h1>demo</h1>
 
-{{outlet}}
+{{#each model as |item|}}
+  <div>
+    Item {{item.id}}
+
+    <button onclick={{action (mut showIt) true}}>show it</button>
+
+    {{#if showIt}}
+      it: {{item.detailFields}}
+    {{/if}}
+  </div>
+{{/each}}
